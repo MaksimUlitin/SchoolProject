@@ -6,67 +6,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>School project</title>
-    <link rel="shortcut icon" type="image/x-icon" href="img/EblanHelloWorld.png">
-
+    <link rel="shortcut icon" type="image/x-icon" href="img/icon.png">
     <link rel="stylesheet" href="css/main.css" />
     <script src="libs/gsap/gsap.min.js" defer></script>
     <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
     <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
     <script src="js/app.js" defer></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </head>
 
-<body onload="openFullscreen()">
-    <div class="wrapper">
-        <div class="content">
-            <header class="main-header">
-                <div class="layers">
-                    <div class="layer__header">
-                        <div class="layers__caption">Школьный проект</div>
-                        <div class="layers__title">Web-site</div>
-                    </div>
-                    <div class="layer layers__base" style="background-image: url(img/layer-base.png);"></div>
-                    <div class="layer layers__middle" style="background-image: url(img/layer-middle.png);"></div>
-                    <div class="layer layers__front" style="background-image: url(img/layer-front.png);"></div>
+<body>
+<div class="wrapper">
+    <div class="content">
+        <header class="main-header">
+            <div class="layers">
+                <div class="layer__header">
+                    <div class="layers__caption">Школьный проект</div>
+                    <div class="layers__title">Web-site</div>
                 </div>
-            </header>
-            <article class="main-article" style="background-image: url(img/dungeon.jpg);">
-                <div class="i">
-                    <form id="new-task-form">
-                        <input type="text" name="new-task-input" id="new-task-input" placeholder="What do you have planned?" />
-                        <input type="submit" id="new-task-submit" value="Add task" />
-                    </form>
-                    <main>
-                        <section class="task-list">
-                            <div id="tasks"></div>
-
-                </div>
-
-                </section>
+                <div class="layer layers__base" style="background-image: url(img/layer-base.png);"></div>
+                <div class="layer layers__middle" style="background-image: url(img/layer-middle.png);"></div>
+                <div class="layer layers__front" style="background-image: url(img/layer-front.png);"></div>
+            </div>
+        </header>
+        <article class="main-article" style="background-image: url(img/dungeon.jpg);">
+            <div class="i">
+                <form id="new-task-form">
+                    <input type="text" name="new-task-input" id="new-task-input" placeholder="What do you have planned?" />
+                    <input type="submit" id="new-task-submit" value="Add task" />
+                </form>
+                <main>
+                    <section class="task-list">
+                        <div id="tasks"></div>
+                    </section>
                 </main>
-        </div>
-        <!-- <p class="main-article__paragraph">eblan hello world</p> -->
-        <div class="copy">© School №3</div>
+            </div>
+            <div class="copy">© School №3</div>
         </article>
     </div>
-    </div>
-    <script>
-        window.onload = function() {
-            openFullscreen();
-        };
+</div>
+<script>
+    window.onload = openFullscreen;
 
-        function openFullscreen() {
-            if (document.documentElement.requestFullscreen) {
-                document.documentElement.requestFullscreen();
-            } else if (document.documentElement.webkitRequestFullscreen) {
+    function openFullscreen() {
+        const docEl = document.documentElement;
 
-                document.documentElement.webkitRequestFullscreen();
-            } else if (document.documentElement.msRequestFullscreen) {
-
-                document.documentElement.msRequestFullscreen();
-            }
+        if (docEl.requestFullscreen) {
+            docEl.requestFullscreen();
+        } else if (docEl.webkitRequestFullscreen) {
+            docEl.webkitRequestFullscreen();
+        } else if (docEl.msRequestFullscreen) {
+            docEl.msRequestFullscreen();
+        } else {
+            console.warn('Fullscreen mode is not supported in this browser.');
         }
-    </script>
+    }
+</script>
 </body>
 
 </html>

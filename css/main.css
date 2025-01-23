@@ -5,7 +5,8 @@
                 }
                 
                  :root {
-                    --index: calc(1vw + 1vh);
+                     --scrollTop: 0;
+                     --index: calc(1vw + 1vh);
                     --text: #e7e7e0;
                     --transition: transform .75s cubic-bezier(.075, .5, 0, 1);
                     --dark: #374151;
@@ -168,12 +169,12 @@
                     color: var(--grey);
                     margin-bottom: 1rem;
                 }
-                
+
                 #new-task-form {
                     display: flex;
                     justify-content: center;
                 }
-                
+
                 input,
                 button {
                     appearance: none;
@@ -181,7 +182,7 @@
                     outline: none;
                     background: none;
                 }
-                
+
                 #new-task-input {
                     flex: 1 1 0%;
                     background-color: var(--darker);
@@ -191,7 +192,7 @@
                     color: var(--light);
                     font-size: 1.25rem;
                 }
-                
+
                 #new-task-input::placeholder {
                     color: var(--grey);
                 }
